@@ -1,6 +1,6 @@
-# Adding Rust to non-Rust Servers to Increase Performance
+# Using Rust in non-Rust Servers to Improve Performance
 
-Companion code repository for the article [Adding Rust to non-Rust Servers to Increase Performance](#).
+Companion code repository for the article [Using Rust in non-Rust Servers to Improve Performance](#).
 
 
 
