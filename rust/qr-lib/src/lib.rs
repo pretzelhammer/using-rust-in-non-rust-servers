@@ -18,4 +18,3 @@ pub fn generate_qr_code(text: &str) -> Result<Vec<u8>, StdErr> {
     img_buf.write_with_encoder(encoder)?;
     Ok(encoded_buf)
 }
-
