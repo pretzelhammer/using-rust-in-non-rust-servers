@@ -1,0 +1,19 @@
+GET http://localhost:42069/qrcode?text=https://github.com/pretzelhammer/rust-blog
+
+GET http://localhost:42069/qrcode?text=https://www.reddit.com/r/rustjerk/top/?t=all
+
+GET http://localhost:42069/qrcode?text=https://youtu.be/cE0wfjsybIQ?t=74
+
+GET http://localhost:42069/qrcode?text=https://www.reddit.com/r/rust/top/?t=month
+
+GET http://localhost:42069/qrcode?text=https://devswag.com/products/rust-ferris
+
+GET http://localhost:42069/qrcode?text=https://www.youtube.com/watch?v=TGfQu0bQTKc
+
+GET http://localhost:42069/qrcode?text=https://tourofrust.com
+
+GET http://localhost:42069/qrcode?text=https://github.com/rust-lang/rustlings
+
+GET http://localhost:42069/qrcode?text=https://exercism.org/tracks/rust
+
+GET http://localhost:42069/qrcode?text=https://en.wikipedia.org/wiki/Carcinisation

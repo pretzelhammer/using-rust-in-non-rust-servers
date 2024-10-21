@@ -1,0 +1,8 @@
+[package]
+name = "monitor-process"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+procfs = "0.17.0"
+signal-hook = "0.3.17"

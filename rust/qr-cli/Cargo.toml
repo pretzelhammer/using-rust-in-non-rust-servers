@@ -1,0 +1,7 @@
+[package]
+name = "qr-cli"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+qr-lib = { path = "../qr-lib" }

@@ -1,0 +1,15 @@
+[package]
+name = "qr-napi"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+qr-lib = { path = "../qr-lib" }
+napi = "2.16.12"
+napi-derive = "2.16.12"
+
+[build-dependencies]
+napi-build = "2.1.3"

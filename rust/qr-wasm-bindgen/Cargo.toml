@@ -1,0 +1,16 @@
+[package]
+name = "qr-wasm-bindgen"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+qr-lib = { path = "../qr-lib" }
+wasm-bindgen = "0.2.95"
+
+# somewhat related:
+# https://github.com/rustwasm/wasm-pack/issues/886#issuecomment-667669802
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = ["-O4", "--all-features"]

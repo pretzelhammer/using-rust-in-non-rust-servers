@@ -1,0 +1,8 @@
+[package]
+name = "qr-lib"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+image = { version = "0.25.2", default-features = false, features = ["png"] }
+qrcode = "0.14.1"
