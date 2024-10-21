@@ -50,3 +50,7 @@ Command to benchmark currently running server:
 ```
 just attack-and-monitor
 ```
+
+## License
+
+This code is dual-licensed under [Apache License Version 2.0](./license-apache) or [MIT License](./license-mit), at your option.
