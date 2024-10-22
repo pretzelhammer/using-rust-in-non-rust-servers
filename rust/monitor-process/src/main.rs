@@ -4,19 +4,15 @@ mod linux;
 #[cfg(target_os = "linux")]
 use linux as monitor;
 
-type StdErr = Box<dyn std::error::Error>;
-
 #[cfg(not(target_os = "linux"))]
-mod monitor {
-    use super::StdErr;
-    pub fn monitor(_pid: i32, _is_quiet: bool) -> Result<(), StdErr> {
-        eprintln!("this CLI tool can only be built and run on linux");
-        Ok(())
-    }
-}
+mod fallback;
+#[cfg(not(target_os = "linux"))]
+use fallback as monitor;
 
 use std::process;
 use std::env;
+
+type StdErr = Box<dyn std::error::Error>;
 
 fn main() -> Result<(), StdErr> {
     let mut args = env::args();

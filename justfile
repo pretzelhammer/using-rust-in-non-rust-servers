@@ -38,8 +38,10 @@ attack-and-monitor: build-monitor-process
     monitor_pid=$!
     sleep 1
     just attack
-    kill -SIGINT "$monitor_pid"
-    sleep 1
+    if ps -p "$monitor_pid" > /dev/null 2>&1; then
+        kill -SIGINT "$monitor_pid"
+        sleep 1
+    fi
 
 
 
