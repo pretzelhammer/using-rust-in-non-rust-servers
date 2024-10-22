@@ -41,6 +41,8 @@ attack-and-monitor: build-monitor-process
     kill -SIGINT "$monitor_pid"
     sleep 1
 
+
+
 ### Node commands ###
 
 # run single-threaded tier-0 node server
@@ -151,12 +153,12 @@ qr-napi-cdylib := if os() == "linux" {
     "unknown_os"
 }
 
-# build release qr_napi
+# build release qr-napi
 build-qr-napi:
     cd ./rust && cargo build --release -p qr-napi
     cp ./rust/target/release/{{qr-napi-cdylib}} ./node/tier-3-rust-native/qr_napi.node
 
-# build debug qr_napi
+# build debug qr-napi
 build-debug-qr-napi:
     cd ./rust && cargo build -p qr-napi
 
@@ -164,7 +166,7 @@ build-debug-qr-napi:
 tier-4-server:
     cd ./rust && RUSTFLAGS="-C target-cpu=native" cargo run --release -p qr-server
 
-# run debug qr_server
+# run debug qr-server
 debug-qr-server:
     cd ./rust && cargo run -p qr-server
 
