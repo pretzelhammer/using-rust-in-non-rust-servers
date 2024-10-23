@@ -19,9 +19,13 @@ attack:
 # monitor resource usage of server listening on 42069
 monitor: build-monitor-process
     #!/usr/bin/env bash
+    if [ "{{ os() }}" != "linux" ]; then
+        echo "monitoring only works on linux"
+        exit 1
+    fi
     pid=$(lsof -t -i :42069)
     if [ -z "$pid" ]; then
-        echo "No process is listening on port 42069"
+        echo "no process is listening on port 42069"
         exit 1
     fi
     ./rust/target/release/monitor-process "$pid"
@@ -29,19 +33,21 @@ monitor: build-monitor-process
 # attack and monitor in one command
 attack-and-monitor: build-monitor-process
     #!/usr/bin/env bash
+    if [ "{{ os() }}" != "linux" ]; then
+        echo "monitoring only works on linux, run this instead: just attack"
+        exit 1
+    fi
     pid=$(lsof -t -i :42069)
     if [ -z "$pid" ]; then
-        echo "No process is listening on port 42069"
+        echo "no process is listening on port 42069"
         exit 1
     fi
     ./rust/target/release/monitor-process "$pid" --quiet &
     monitor_pid=$!
     sleep 1
     just attack
-    if ps -p "$monitor_pid" > /dev/null 2>&1; then
-        kill -SIGINT "$monitor_pid"
-        sleep 1
-    fi
+    kill -SIGINT "$monitor_pid"
+    sleep 1
 
 
 
