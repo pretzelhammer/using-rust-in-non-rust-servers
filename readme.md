@@ -1,6 +1,6 @@
-# Using Rust in non-Rust Servers to Improve Performance
+# Using Rust in Non-Rust Servers to Improve Performance
 
-Companion code repository for the article [Using Rust in non-Rust Servers to Improve Performance](https://github.com/pretzelhammer/rust-blog/blob/master/posts/rust-in-non-rust-servers.md).
+Companion code repository for the article [Using Rust in Non-Rust Servers to Improve Performance](https://github.com/pretzelhammer/rust-blog/blob/master/posts/rust-in-non-rust-servers.md).
 
 
 
